@@ -1,5 +1,5 @@
 resource "aws_iam_group" "group" {
-  name               = var.role_name
+  name = var.role_name
 }
 
 
