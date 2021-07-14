@@ -3,17 +3,17 @@
 ###########################
 
 output "created-iam-group-name" {
-  value       = var.iam_group ? aws_iam_group.group.name : ""
+  value       = aws_iam_group.group.name
   description = "Name of IAM group created."
 }
 
 output "created-iam-group-id" {
-  value       = var.iam_group ? aws_iam_group.group.id : ""
+  value       = aws_iam_group.group.id
   description = "ID of IAM group created."
 }
 
 output "created-iam-group-arn" {
-  value       = var.iam_group ? aws_iam_group.group.arn : ""
+  value       = aws_iam_group.group.arn
   description = "Arn of IAM group created."
 }
 
@@ -22,6 +22,6 @@ output "created-iam-group-arn" {
 ###########################
 
 output "policy-arn" {
-  value       = var.create_policy ? aws_iam_policy.policy.arn : var.existing_policy_arn
+  value       = var.create_policy ? aws_iam_policy.policy[0].arn : var.existing_policy_arn
   description = "ARN of Policy Used."
 }
